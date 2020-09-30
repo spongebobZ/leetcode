@@ -28,8 +28,17 @@ object one_nine_zero {
 
   def main(args: Array[String]): Unit = {
     def reverseBits(x: Int): Int = {
-      x
+      var r = 0
+      var d = 31
+      var y = x
+      while (y != 0){
+        r += (y & 1) << d
+        y = y >> 1
+        d -= 1
+      }
+      r
     }
+    print(reverseBits(123))
   }
 
 }
